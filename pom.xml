@@ -12,7 +12,7 @@
 	<artifactId>redis-standalone</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Redis Standalone CRUD</name>
-	<description>A template showing basic CRUD operation for standalone Redis</description>
+	<description>A template showing basic CRUD operation for standalone Redis written in Spring Boot and Java 11</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
