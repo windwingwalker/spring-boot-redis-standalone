@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    volumes:
+      - ../:/workspace:cached
+      - maven-repo:/root/.m2
+      - vscode-extension-java:/root/.vscode-server/extensions
+    environment:
+      APPLICATION_PORT: 8080
+      REDIS_HOST: db
+      REDIS_PORT: 6379
+    ports:
+      - "8080:8080"
+    networks:
+      - demo-network
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    
+  db:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+    - redis:/data
+    networks:
+      - demo-network
+
+volumes:
+  maven-repo:
+    external: true
+  redis:
+    external: true
+  vscode-extension-java:
+    external: true
+
+networks:
+  demo-network:
+    external: 
+      name: demo-network
+

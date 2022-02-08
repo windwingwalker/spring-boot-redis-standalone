@@ -1,0 +1,16 @@
+{
+	"name": "Spring Boot Redis Standalone",
+
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+
+	"service": "web",
+
+	"workspaceFolder": "/workspace",
+
+	"settings": {
+		"JAVA_HOME": "/usr/local/openjdk-11",
+		"maven.executable.path": "/usr/share/maven/bin/mvn"
+	},
+}
